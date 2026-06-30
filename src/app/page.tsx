@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Award, Download, ExternalLink, Github, GraduationCap, Wrench } from "lucide-react";
 import { george } from "@/data/george";
+import { persona } from "@/data/persona";
 import { PortfolioNav } from "@/components/PortfolioNav";
 
 function CredentialLightbox({ src, label, onClose }: { src: string; label: string; onClose: () => void }) {
@@ -26,7 +27,7 @@ export default function PortfolioPage() {
 
       <header className="sticky top-0 z-30 border-b border-navy/10 bg-white/95 backdrop-blur-md">
         <div className="relative mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-          <a href="#" className="pro-heading text-lg font-semibold text-navy">{george.shortName}</a>
+          <a href="#" className="pro-heading text-lg font-semibold text-navy">{persona.shortName}</a>
           <PortfolioNav />
         </div>
       </header>
@@ -35,9 +36,10 @@ export default function PortfolioPage() {
         <div className="mx-auto grid max-w-5xl gap-10 px-6 py-16 md:grid-cols-[1fr_200px] md:items-center md:py-20">
           <div>
             <p className="text-sm font-medium uppercase tracking-widest text-gold">Portfolio</p>
-            <h1 className="pro-heading mt-2 text-4xl font-bold text-navy md:text-5xl">{george.name}</h1>
-            <p className="mt-3 text-xl text-navy-light">{george.title}</p>
-            <p className="mt-4 max-w-xl leading-relaxed text-navy/70">{george.tagline}</p>
+            <h1 className="pro-heading mt-2 text-4xl font-bold text-navy md:text-5xl">{persona.tagline}</h1>
+            <p className="mt-3 text-xl font-semibold text-navy">{persona.name}</p>
+            <p className="mt-2 max-w-xl text-sm text-navy/70">{persona.subtagline}</p>
+            <p className="mt-3 text-sm text-navy/50">{persona.title}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href={george.github} target="_blank" rel="noreferrer" className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-navy px-5 py-2.5 text-sm text-white hover:bg-navy-light">
                 <Github className="h-4 w-4" /> GitHub
@@ -53,7 +55,7 @@ export default function PortfolioPage() {
           <div className="relative mx-auto h-48 w-48 overflow-hidden rounded-full border-4 border-gold/30 shadow-lg md:mx-0">
             <Image
               src="/assets/credentials/KCSE Certificate.jpg"
-              alt={george.name}
+              alt={persona.name}
               fill
               className="scale-150 object-cover object-top"
               unoptimized
@@ -105,7 +107,7 @@ export default function PortfolioPage() {
       <section id="credentials" className="scroll-mt-16 bg-cream py-16">
         <div className="mx-auto max-w-5xl px-6">
           <h2 className="pro-heading text-3xl font-bold text-navy">Credentials</h2>
-          <p className="mt-2 text-navy/60">Verified academic records — click to enlarge</p>
+          <p className="mt-2 text-navy/60">Click to enlarge</p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {george.credentials.map((cred) => (
               <button
@@ -165,7 +167,7 @@ export default function PortfolioPage() {
       </section>
 
       <footer className="border-t border-navy/10 bg-navy py-10 text-center text-sm text-white/70">
-        <p>{george.name} · {george.title}</p>
+        <p>{persona.name} · {persona.title}</p>
         <p className="mt-2">
           <a href={george.vibeUrl} className="underline hover:text-white">GK WOO</a>
           {" · "}

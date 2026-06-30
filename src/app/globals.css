@@ -16,10 +16,16 @@ body {
   background: var(--color-cream);
   color: var(--color-navy);
   font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .pro-heading {
   font-family: var(--font-serif);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 :focus-visible {
